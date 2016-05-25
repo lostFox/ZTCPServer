@@ -7,7 +7,7 @@
 #include <mutex>
 #include <condition_variable>
 
-void thread_task() { std::cout << "hello thread" << std::endl; }
+//void thread_task() { std::cout << "hello thread" << std::endl; }
 void f1(int n) 
 { 
 	for (int i = 0; i < 5; ++i) 
