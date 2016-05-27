@@ -4,35 +4,8 @@
 //#include "stdafx.h"
 #include <iostream>
 #include <thread>
-#include <mutex>
-#include <condition_variable>
 
-//void thread_task() { std::cout << "hello thread" << std::endl; }
-void f1(int n) 
-{ 
-	for (int i = 0; i < 5; ++i) 
-	{ 
-		std::cout << "Thread " << n << " executing\n"; 
-		std::this_thread::sleep_for(std::chrono::milliseconds(10)); 
-	} 
-} 
-
-void f2(int& n) 
-{ 
-	for (int i = 0; i < 5; ++i) 
-	{ 
-		std::cout << "Thread 2 executing\n"; 
-		++n; 
-		std::this_thread::sleep_for(std::chrono::milliseconds(10)); 
-	} 
-}
-
-void thread_task(int n) 
-{ 
-	std::this_thread::sleep_for(std::chrono::seconds(n)); 
-	std::cout << "hello thread " << std::this_thread::get_id() 
-		<< " paused " << n << " seconds" << std::endl; 
-}
+#include "thread.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -52,8 +25,10 @@ int main(int argc, char* argv[])
 		threads[i] = std::thread(thread_task, i+1);
 	} 
 	std::cout << "Done spawning threads! Now wait for them to join\n"; 
+	int i = 0;
 	for (auto& t : threads) 
 	{ 
+		i++;
 		t.join(); 
 	} 
 	std::cout << "All threads joined.\n";
