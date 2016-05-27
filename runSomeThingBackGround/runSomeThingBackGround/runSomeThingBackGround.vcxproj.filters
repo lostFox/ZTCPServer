@@ -26,5 +26,14 @@
     <ClInclude Include="thread.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="guard.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="recursiveMutex.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uniqueLock.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

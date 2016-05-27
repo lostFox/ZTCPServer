@@ -150,7 +150,10 @@
     <ClCompile Include="runSomeThingBackGround.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="guard.hpp" />
+    <ClInclude Include="recursiveMutex.hpp" />
     <ClInclude Include="thread.hpp" />
+    <ClInclude Include="uniqueLock.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
